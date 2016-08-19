@@ -1,10 +1,6 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
+This README explain how to make to configure this aplication using Ruby On Rails
 
 #### Install Required Components
 
@@ -13,27 +9,22 @@ Ruby, Ruby On Rails
 Webserver (Nginx or Apache), app rake rails (Unicorn, Passenger or Puma) 
 PostgeSQL, or MariaDB
 ```
-* Ruby version
+
+#### Configuration
+
+```sh
+rake db:create
+rake db:migrate 
+restart Webserver (Nginx or Apache), app rake rails (Unicorn, Passenger or Puma) 
+```
 
 
-* System dependencies
+#### Database creation
 
-* Configuration
+configure the file database.yml and then execute the follows command lines
 
+```sh
+rake db:create
+rake db:migrate
+```
 
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
