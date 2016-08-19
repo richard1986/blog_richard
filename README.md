@@ -5,13 +5,22 @@ application up and running.
 
 Things you may want to cover:
 
+
+#### Install Required Components
+
+```sh
+Ruby, Ruby On Rails
+Webserver (Nginx or Apache), app rake rails (Unicorn, Passenger or Puma) 
+PostgeSQL, or MariaDB
+```
 * Ruby version
+
 
 * System dependencies
 
 * Configuration
 
- Install Ruby, Ruby On Rails, MariaDB
+
 
 * Database creation
 
