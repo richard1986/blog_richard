@@ -1,0 +1,8 @@
+<h1>Backend</h1>
+<div class="placeholder">
+  <h4 class="text-center">User:</h4>
+  <p class="text-center"><span class="text-muted"><%= current_user.account.fullname %></span></p>
+  <p class="text-center"><span class="text-muted"><%= current_user.account.phone %></span></p>
+  <p class="text-center"><span class="text-muted"><%= current_user.account.address %></span></p>
+</div>
+<%= link_to "Exit", destroy_user_session_path, method: :delete, id: "exit", data: { confirm: 'Are you sure?' } %>

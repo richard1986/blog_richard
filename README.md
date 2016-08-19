@@ -1,4 +1,4 @@
-== README
+## README
 
 This README explain how to make to configure this application using Ruby On Rails
 

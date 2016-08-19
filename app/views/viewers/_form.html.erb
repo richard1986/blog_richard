@@ -1,0 +1,31 @@
+<div class="col-sm-12">
+  <div class="row show-grid">
+    <div class="col-md-10 col-md-offset-1">
+      <%= form_for(@viewer, html: {class: "bs-example"}) do |f| %>
+        <% if @viewer.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@viewer.errors.count, "error") %> prohibited this viewer from being saved:</h2>
+
+            <ul>
+            <% @viewer.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <div class="form_group">
+          <%= f.label :id_session, class: "control-label" %>
+          <%= f.text_field :id_session, autocomplete: "off", placeholder: "Voucher Number", class: "form-control" %>
+        </div>
+        <div class="form_group">
+          <%= f.label :user_agent, class: "control-label" %>
+          <%= f.text_field :user_agent, autocomplete: "off", placeholder: "Voucher Number", class: "form-control" %>
+        </div>
+        <div class="form_group">
+          <%= f.label :ip_client, class: "control-label" %>
+          <%= f.text_field :ip_client, autocomplete: "off", placeholder: "Voucher Number", class: "form-control" %>
+        </div>
+        <div class="btn-group" role="group">
+          <%= f.button "Save viewer &nbsp;<span class=\"glyphicon glyphicon-floppy-disk\"></span>".html_safe, class: "btn btn-primary" %>
+      <% end %>

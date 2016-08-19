@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Error:404 in SkeyesAd</title>
+    <%= stylesheet_link_tag    'backend', media: 'all', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <% raise notice.to_yaml %>
+    <% if notice %>
+    <div role="alert" class="col-sm-12 alert alert-<%= notice['class']  %> alert-dismissible fade in">
+      <button aria-label="Close" data-dismiss="alert" class="close" type="button">
+        <span aria-hidden="true">
+          ×
+        </span>
+      </button>
+      <p>
+      <%= notice['body'] %>
+      </p>
+    </div>
+    <% end -%>
+	<h1>error 404 personalizado</h1>
+  <%= javascript_include_tag 'backend', 'data-turbolinks-track' => true %>
+  </body>
+
+</html>
+

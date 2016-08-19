@@ -1,0 +1,72 @@
+<!-- Fixed navbar -->
+    <div class="navbar navbar-static navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle toggle-left hidden-md hidden-lg" data-toggle="sidebar" data-target=".sidebar-left">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">SkeyesAd</a>
+        </div>
+        <button type="button" class="navbar-toggle toggle-right" data-toggle="sidebar" data-target=".sidebar-right">
+          <span class="glyphicon glyphicon-user white" aria-hidden="true"></span>
+        </button>
+        <!-- <form class="navbar-form navbar-right">
+          <input type="text" class="form-control" placeholder="Search...">
+        </form> -->
+      </div>
+
+    </div>
+
+    <!-- Begin page content -->
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-7 col-sm-2 col-md-2 sidebar sidebar-left sidebar-animate sidebar-md-show">
+        <div class="placeholder">
+            <div class="placeholder">
+              <p class="text-center">
+                <%=link_to( image_tag( current_user.account.image.url( :thumb ), class: "img-circle", style: "width: 140px; height: 140px;" ), see_account_image_path(current_user.account), :data => { :colorbox => true, :colorbox_height => '100%', :colorbox_width => '100%', :colorbox_iframe => true }) %>
+              </p>
+            </div>
+            <h4 class="text-center">Signed in as:</h4>
+          <p class="text-center"><span class="text-muted"><%= current_user.account.fullname %></span></p>
+        </div>
+          <hr>
+          <ul class="nav nav-pills nav-stacked">
+            <li class="<%= 'active' if current_page?(root_path) %>"><%= link_to '<span class="glyphicon glyphicon-home" aria-hidden="true"></span> <span class="glyphicon-class"> Backend</span>'.html_safe, root_path %></li>
+              <div id="up-down-1" class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingThree">
+                    <a class="collapsed active" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseAdvertizer" aria-expanded="false" aria-controls="collapseAdvertizer">
+                      <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span><span class="glyphicon-class"> Look up</span>                      
+                      <span class="caret"></span>
+                    </a>
+                </div>
+                <div id="collapseAdvertizer" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                  <div class="panel-body">
+                    <ul class="nav nav-pills nav-stacked">
+                      <li class="<%= 'active' if params[:controller] == 'articles' %>"><%= link_to '<span class="glyphicon glyphicon-comment" aria-hidden="true"></span><span class="glyphicon-class"> Articles</span>'.html_safe, "/articles" %></li>
+                      <li class="<%= 'active' if params[:controller] == 'viewers' %>"><%= link_to '<span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span><span class="glyphicon-class"> Viewers</span>'.html_safe, "/viewers" %></li>
+                    </ul>
+                  </div>
+                </div>  
+              </div>
+
+              <div id="up-down-2" class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingfour">
+                    <a class="collapsed active" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSettings" aria-expanded="false" aria-controls="collapseSettings">
+                      <span class="glyphicon glyphicon-cog" aria-hidden="true"></span><span class="glyphicon-class"> Settings</span>
+                      <span class="caret"></span> 
+                    </a>
+                </div>
+                <div id="collapseSettings" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                  <div class="panel-body">
+                    <ul class="nav nav-pills nav-stacked">
+                      <li class="<%= 'active' if params[:controller] == 'accounts' %>"><%= link_to '<span class="glyphicon glyphicon-tags" aria-hidden="true"></span><span class="glyphicon-class"> Accounts</span>'.html_safe, "/accounts" %></li>
+                    </ul>
+                  </div>
+                </div>  
+              </div>
+          </ul>
+        </div>
+        <div class="main col-md-10 col-md-offset-2">

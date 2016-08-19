@@ -1,0 +1,53 @@
+<div class="col-sm-12">
+  <div class="row show-grid">
+    <div class="col-md-4 col-md-offset-4">  
+      <%= form_tag( create_account_path, class: 'bs-example'   ) do %>
+        <% if @account.errors.any? %>
+          <div role="alert" class="col-sm-12 alert alert-danger alert-dismissible fade in">
+            <button aria-label="Close" data-dismiss="alert" class="close" type="button">
+              <span aria-hidden="true">
+                ×
+              </span>
+            </button>
+            <p>
+              <h3><%= pluralize(@account.errors.count, "error") %> prohibited this account from being saved:</h3>
+            </p>
+            <ul>
+              <% @account.errors.full_messages.each do |message| %>
+                <li>
+                  <%= message %>
+                </li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+        <div class="row">
+          <div class="form-group">
+            <%= label_tag(:email, "Email:" , class: "control-label") %>
+            <input type="text" name="userc[email]" placeholder="email"  class="form-control" autocomplete="off">
+          </div>
+          <div class="form-group">
+            <label for="password" class="control-label">Password</label>
+            <input type="password" class="form-control"  name="userc[password]" placeholder="Password" autocomplete="off">
+          </div>
+          <div class="form-group">
+            <label for="password_confirmation" class="control-label">Password Confirmation</label>
+            <input type="password" class="form-control"  name="userc[password_confirmation]" placeholder="Password Confirmation" autocomplete="off">
+          </div>
+          <div class="form-group">
+            <label for="fullname" class="control-label">Full Name</label>
+            <input type="text" class="form-control"  name="account[fullname]" placeholder="Full Name" autocomplete="off">
+          </div>
+          <div class="form-group">
+            <label for="address" class="control-label">Address</label>
+            <input type="address" class="form-control"  name="account[address]" placeholder="Address" autocomplete="off">
+          </div>
+          <div class="form-group">
+            <label for="phone" class="control-label">Phone</label>
+            <input type="text" class="form-control"  name="account[phone]" placeholder="Phone" autocomplete="off">
+          </div>
+          <div class="form-group text-center" role="group">
+            <button type="submit" class="btn btn-primary">Save Account <span class="glyphicon glyphicon-floppy-disk"></span></button>       
+      <% end %>
+
+

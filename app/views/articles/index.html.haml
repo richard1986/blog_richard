@@ -1,0 +1,12 @@
+- options= ['Fullname', 'Title', 'Description']
+= smart_listing_controls_for(:articles, {class: "form-inline text-right"}) do
+	.form-group.filter.input-append
+		= text_field_tag :textsearch, '', class: "search form-control", placeholder: "Search...",autocomplete: :off
+		= select_tag :type, options_for_select(options), :disabled => false, class: "form-control"
+	%button.btn.btn-primary.disabled{type: :submit}
+		%span.glyphicon.glyphicon-search
+
+%h2= (link_to 'New Article', new_article_path, class: "btn btn-success", id: "new_link", remote: true)
+%h1.page-header Listing Articles
+= smart_listing_render(:articles)
+

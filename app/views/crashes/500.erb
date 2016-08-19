@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Error:404 in SkeyesAd</title>
+  </head>
+  <body>  
+    <% if notice %>
+      <div role="alert" class="col-sm-12 alert alert-<%= notice['class']  %> alert-dismissible fade in">
+        <button aria-label="Close" data-dismiss="alert" class="close" type="button">
+          <span aria-hidden="true">
+            ×
+          </span>
+        </button>
+        <p>
+        <%= notice['body'] %>
+        </p>
+      </div>
+    <% end -%>
+    <h1 class="page-header">error 500 personalizado</h1>
+  </body>
+
+</html>
+

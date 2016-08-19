@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id_session: MyString
+  visists: 1
+  user_agent: MyString
+  ip_client: MyString
+
+two:
+  id_session: MyString
+  visists: 1
+  user_agent: MyString
+  ip_client: MyString

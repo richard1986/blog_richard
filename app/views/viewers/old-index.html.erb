@@ -1,0 +1,36 @@
+<div class="col-sm-12">
+  <div class="row show-grid">
+    <div class="col-md-4 col-md-offset-4">
+      <p id="notice"><%= notice %></p>
+
+      <h1>Listing Viewers</h1>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Id session</th>
+            <th>Visits</th>
+            <th>User agent</th>
+            <th>Ip client</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @viewers.each do |viewer| %>
+            <tr>
+              <td><%= viewer.id_session %></td>
+              <td><%= viewer.visits %></td>
+              <td><%= viewer.user_agent %></td>
+              <td><%= viewer.ip_client %></td>
+              <td><%= link_to 'Show', viewer %></td>
+              <td><%= link_to 'Edit', edit_viewer_path(viewer) %></td>
+              <td><%= link_to 'Destroy', viewer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+      <br>
+
+      <%= link_to 'New Viewer', new_viewer_path %>

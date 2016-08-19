@@ -1,0 +1,29 @@
+<h1 class="page-header"><p class="text-center">Editing Viewer</p></h1>
+<div class="col-sm-12">
+  <div class="row show-grid">
+    <div class="col-md-10 col-md-offset-1">
+     	<div class="col-sm-8">
+        <div class="dl-horizontal">
+          <dl>
+          <dt>Id session:</dt>
+          <dd><%= @viewer.id_session %></dd> 
+          <dt>Visits:</dt>
+          <dd><%= @viewer.visits %></dd>
+          <dt>User agent:</dt>
+          <dd><%= @viewer.user_agent %></dd>
+          <dt>Ip client:</dt>
+          <dd><%= @viewer.ip_client %></dd>
+          </dl>
+        </div> 
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row show-grid">
+  <div class="col-md-10 col-md-offset-1">
+    <div class="btn-group" role="group" aria-label="Basic example">
+      <%= link_to '<span class="glyphicon glyphicon-pencil"></span>&nbsp;Edit'.html_safe, edit_viewer_path(@viewer), class: "btn btn-warning" %>
+      <%= link_to '<span class="glyphicon glyphicon-chevron-left"></span>&nbsp;Back'.html_safe, viewers_path, class: "btn btn-danger" %>
+    </div>
+  </div>
+</div>

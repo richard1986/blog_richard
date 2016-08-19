@@ -1,0 +1,34 @@
+- unless smart_listing.empty?
+  %table.table.table-striped
+    %thead
+    %tr
+      %th.col-sm-2= "Id session"
+      %th.col-sm-2= "Visits"
+      %th.col-sm-4= "User agent"
+      %th.col-sm-1.text-center= "Ip client"
+      %th.col-sm-1.text-center= "Show"
+      %th.col-sm-1.text-center= "Edit"
+      %th.col-sm-1.text-center= "Destroy"          
+    %tbody
+      - smart_listing.collection.each do |v|
+        %tr
+          %td= v.id_session
+          %td= v.visits
+          %td= v.user_agent
+          %td.text-center= v.ip_client
+          %td.text-center
+            %p= link_to "<span class=\"glyphicon glyphicon-sunglasses blue\"></span>".html_safe, v
+          %td.text-center
+            %p= link_to "<span class=\"glyphicon glyphicon-pencil darkgreen\"></span>".html_safe, edit_viewer_path(v)
+          %td.text-center
+            %p= link_to "<span class=\"glyphicon glyphicon-trash red\"></span>".html_safe, v, id: v.id, method: :delete, data: { confirm: 'Are you sure?' }
+
+  -# Render nice pagination links fitted for Bootstrap 3 by default
+  = smart_listing.paginate
+  = smart_listing.pagination_per_page_links
+- else
+  %td.row.col-sm-12
+    %p.alert.alert-info No records!
+
+        
+        

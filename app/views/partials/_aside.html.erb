@@ -1,0 +1,23 @@
+        </div>
+        <div class="col-xs-7 col-sm-2 col-md-2 sidebar sidebar-right sidebar-animate">
+          <ul class="nav nav-pills nav-stacked">
+            
+            <div class="placeholder">
+              <h4 class="text-center">User:</h4>
+              <p class="text-center"><span class="text-muted"><%= current_user.account.fullname %></span></p>
+            </div>
+            <hr>
+            <li class="divider" role="separator"></li>
+            <li class="<%= 'active' if (params[:controller] == 'users/registrations' && params[:action] == 'edit') %>">
+            <%= link_to '<span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span><span class="glyphicon-class"> Change Password</span>'.html_safe, edit_user_registration_path, alt: "Change Password", title: "Change Password" %>
+            </li>
+            <li class="<%= 'active' if (params[:controller] == 'accounts' && params[:action] == 'edit') %>">
+              <%= link_to '<span class="glyphicon glyphicon-edit" aria-hidden="true"></span><span class="glyphicon-class"> Edit profile</span>'.html_safe, edit_account_path(current_user.account.id), alt: current_user.email, title: current_user.email %>
+
+            </li>
+            <li><%= link_to '<span class="glyphicon glyphicon-log-out" aria-hidden="true"></span><span class="glyphicon-class"> Log out</span>'.html_safe, destroy_user_session_path, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+          </ul>
+          </ul>
+        </div>
+      </div>
+    </div>
