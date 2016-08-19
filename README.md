@@ -1,6 +1,6 @@
 == README
 
-This README explain how to make to configure this aplication using Ruby On Rails
+This README explain how to make to configure this application using Ruby On Rails
 
 #### Install Required Components
 
@@ -21,7 +21,7 @@ restart Webserver (Nginx or Apache), app rake rails (Unicorn, Passenger or Puma)
 
 #### Database creation
 
-configure the file database.yml and then execute the follows command lines
+configure the database.yml file and then execute the follows command lines, it will shown below:
 
 ```sh
 rake db:create
