@@ -1,0 +1,41 @@
+/*
+  GreatVibes-Regular
+*/
+
+@font-face {
+  font-family: 'Lovers Quarrel';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lovers Quarrel'), local('LoversQuarrel-Regular'), url(../fonts/LoversQuarrel/gipdZ8b7pKb89MzQLAtJHL0OK5sWYMUoljHuUBTaFzo.woff) format('woff');
+}
+
+/* End GreatVibes-Regular */
+
+
+body
+{
+	background-color: #222;
+	color: #fff;
+}
+
+.full
+{
+	padding:0;
+}
+.title, footer
+{
+	margin: 1.8em auto;
+}
+.title h1, .title h3
+{
+	font-family: 'Lovers Quarrel';
+	/*margin-bottom: 1em;*/
+}
+.title h1
+{
+	font-size: 4em;
+}
+.title h3
+{
+	font-size: 2.4691em;
+}
